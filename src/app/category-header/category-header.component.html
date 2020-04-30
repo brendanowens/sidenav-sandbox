@@ -1,0 +1,26 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <button *ngIf="showMenuIcon">
+      <mat-icon class="icon-primary" svgIcon="menu-8"></mat-icon>
+    </button>
+    <h2>{{category.name}}</h2>
+    <span class="toolbar-spacer"></span>
+    <div class="header-search-box">
+      <mat-form-field appearance="outline">
+        <mat-label>Search</mat-label>
+        <input matInput placeholder="">
+      </mat-form-field>
+    </div>
+    <div (click)="openElementFilterPopover($event)" class="button-group">
+      <button mat-stroked-button>
+        <mat-icon svgIcon="sort-tool-2"></mat-icon>
+      </button>
+      <button (click)="openElementFilterPopover($event)" mat-stroked-button>
+        <mat-icon svgIcon="sort-tool-2"></mat-icon>
+      </button>
+      <button (click)="openProjectOptionsPopover($event)" mat-stroked-button>
+        <mat-icon svgIcon="switches"></mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

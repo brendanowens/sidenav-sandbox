@@ -1,0 +1,16 @@
+@import '~@angular/material/theming';
+@import '../../variables';
+
+.badge-wrapper {
+  background-color: mat-color($accent, 200, 0.2);
+  width: fit-content;
+  padding: 1px 4px 1px 4px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.badge-text{
+  font-size: .8rem;
+  font-weight: bold;
+  color: mat-color($accent);
+}

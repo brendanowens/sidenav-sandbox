@@ -1,0 +1,50 @@
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened" [mode]="mode">
+    <div>
+      <button mat-icon-button>
+        <mat-icon class="icon-white" svgIcon="tail-left"></mat-icon>
+      </button>
+    </div>
+    <div class="sidenav-header">
+      <mat-icon class="icon-white" svgIcon="template"></mat-icon>
+      <h2 class="title">Categories</h2>
+      <button
+        mat-mini-fab
+        color="accent"
+        (click)="openCreateCategoryMenu($event)"
+      >
+        <mat-icon svgIcon="add-part"></mat-icon>
+      </button>
+    </div>
+    <div class="sidenav-item-container" *ngFor="let cat of categories; trackBy: trackByCat">
+      <div class="sidenav-sub-header">
+        <button
+          mat-button
+          disableRipple="true"
+          (click)="selectedCategory = cat.id"
+          [ngClass]="{'selected' : selectedCategory === cat.id}"
+        >{{cat.name}}</button>
+        <app-layer-badge>{{cat.count}}</app-layer-badge>
+        <mat-icon svgIcon="menu-5" (click)="categoryModal(cat)"></mat-icon>
+      </div>
+    </div>
+    <div class="sidenav-header">
+      <mat-icon class="icon-white" svgIcon="file-stack"></mat-icon>
+      <h2 class="title">Files</h2>
+    </div>
+    <div class="sidenav-header">
+      <mat-icon class="icon-white" svgIcon="chat-46"></mat-icon>
+      <h2 class="title">Notes</h2>
+    </div>
+    <div class="sidenav-header">
+      <mat-icon class="icon-white" svgIcon="list"></mat-icon>
+      <h2 class="title">Tasks</h2>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-category-header [category]="getCategoryById(selectedCategory)" [showMenuIcon]="mode==='over'"></app-category-header>
+    <button (click)="opened=!opened" *ngIf="mode==='over'">
+      <mat-icon class="icon-primary" svgIcon="menu-8"></mat-icon>
+    </button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

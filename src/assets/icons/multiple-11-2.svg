@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32">
+  <g class="nc-icon-wrapper" fill="none" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round">
+    <path data-cap="butt" data-color="color-2" d="M10.713 13.719A3.005 3.005 0 008 12H4a3 3 0 00-3 3v5h2v7h6"/>
+    <circle data-color="color-2" cx="6" cy="6" r="3"/>
+    <path data-cap="butt" data-color="color-2" d="M21.287 13.719A3.005 3.005 0 0124 12h4a3 3 0 013 3v5h-2v7h-6"/>
+    <circle data-color="color-2" cx="26" cy="6" r="3"/>
+    <path d="M19 31h-6v-8h-3v-7a4 4 0 014-4h4a4 4 0 014 4v7h-3v8z"/>
+    <circle cx="16" cy="5" r="4"/>
+  </g>
+</svg>

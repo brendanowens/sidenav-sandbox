@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs/>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" class="nc-icon-wrapper">
+    <path d="M2 16h44M2 24h44" data-color="color-2"/>
+    <path d="M43 40H5c-1.7 0-3-1.3-3-3V11c0-1.7 1.3-3 3-3h38c1.7 0 3 1.3 3 3v26c0 1.7-1.3 3-3 3z"/>
+    <path d="M10 32h10M35 32h3" data-color="color-2"/>
+  </g>
+</svg>

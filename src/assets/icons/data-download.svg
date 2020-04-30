@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs/>
+  <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" class="nc-icon-wrapper">
+    <path d="M32 3v44" data-cap="butt"/>
+    <path d="M48 31L32 47 16 31"/>
+    <path d="M2 50v12h60V50" data-color="color-2"/>
+  </g>
+</svg>

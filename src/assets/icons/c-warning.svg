@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32">
+  <g class="nc-icon-wrapper" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" fill="none" stroke-miterlimit="10">
+    <circle cx="32" cy="32" r="29"/>
+    <path data-color="color-2" d="M32 14v25"/>
+    <circle data-color="color-2" cx="32" cy="47" r="1"/>
+  </g>
+</svg>

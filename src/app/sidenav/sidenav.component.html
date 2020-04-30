@@ -1,0 +1,40 @@
+<mat-sidenav-container>
+  <mat-sidenav [(opened)]="opened" mode="side">
+      <div class="sidenav-header">
+        <mat-icon class="icon-white" svgIcon="template"></mat-icon>
+        <span class="title"> Workflows</span>
+        <button mat-mini-fab color="accent">
+          <mat-icon svgIcon="add-part"></mat-icon>
+        </button>
+      </div>
+      <div class="sidenav-item-container" *ngFor="let category of categories">
+        <mat-expansion-panel class="no-shadow" togglePosition="before">
+          <mat-expansion-panel-header>
+            <div class="sidenav-sub-header">
+              {{category.name}}
+            </div>
+          </mat-expansion-panel-header>
+          <div class="sidenav-header-content" *ngFor="let subcategory of category.subcategories">
+            {{subcategory.name}}
+          </div>
+        </mat-expansion-panel>
+      </div>
+      <div class="sidenav-header">
+        <mat-icon class="icon-white" svgIcon="file-stack"></mat-icon>
+        <span class="title"> Files</span>
+      </div>
+      <div class="sidenav-header">
+        <mat-icon class="icon-white" svgIcon="chat-46"></mat-icon>
+        <span class="title"> Notes</span>
+      </div>
+      <div class="sidenav-header">
+        <mat-icon class="icon-white" svgIcon="list"></mat-icon>
+        <span class="title"> Tasks</span>
+      </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button (click)="opened=!opened">
+      <mat-icon class="icon-primary" svgIcon="menu-8"></mat-icon>
+    </button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

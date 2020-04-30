@@ -1,1 +1,1111 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import '_variables';
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($theme);
+@include angular-material-typography($typography);
+
+html,
+body {
+  height: 100%;
+}
+body {
+  max-height: 100%;
+  margin: 0;
+  font-family: $font-family;
+  color: mat-color($primary);
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.mat-checkbox-layout {
+  white-space: normal !important;
+}
+
+.mat-radio-label {
+  white-space: normal !important;
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-accent {
+  background-color: mat-color($accent, 50);
+  color: mat-color($accent, 800);
+  border-color: mat-color($accent, 100);
+}
+.mat-chip.mat-standard-chip {
+  cursor: pointer;
+  color: mat-color($primary, 600);
+  background-color: mat-color($primary, 50);
+  border-color: mat-color($primary, 200);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  &.small {
+    min-height: 18px;
+    font-size: 11px;
+    border-radius: 5px;
+    padding: 7px 8px;
+  }
+}
+.mat-standard-chip::after {
+  background: unset;
+}
+
+mat-card {
+  box-shadow: none !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  border: var(--ion-color-light) 2px solid;
+}
+
+.menu {
+  .mat-menu-content {
+    padding-top: 0 !important;
+
+    .user-menu-item {
+      color: mat-color($primary);
+    }
+  }
+}
+
+/* Potential way to handle accent form fields on a dark (primary) background */
+.accent-form-field.mat-form-field {
+  &:not(.mat-form-field-invalid) {
+    .mat-form-field-outline,
+    .mat-form-field-label {
+      color: mat-color($accent);
+    }
+  }
+
+  .mat-form-field-infix:after {
+    border-top-color: mat-color($accent);
+  }
+
+  option {
+    color: mat-color($primary);
+  }
+}
+
+.contrast-form-field.mat-form-field {
+  &:not(.mat-form-field-invalid) {
+    .mat-form-field-outline,
+    .mat-form-field-label {
+      color: mat-color($primary, 'default-contrast');
+    }
+    .mat-form-field-infix:after {
+      border-top-color: mat-color($primary, 'default-contrast');
+    }
+  }
+
+  option {
+    color: mat-color($primary);
+  }
+}
+
+.menu-name {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+}
+
+tag {
+  background: var(--ion-color-secondary-tint) !important;
+  color: var(--ion-color-primary) !important;
+  //margin-bottom:10px;
+}
+
+tag > div {
+  line-height: 30px;
+}
+
+.clickable-card {
+  cursor: pointer;
+}
+
+ion-menu {
+  border-left: 1px solid var(--ion-color-light);
+}
+
+ion-toast {
+  --button-color: var(--ion-color-secondary);
+}
+
+.layer-tag {
+  color: var(--ion-color-primary);
+  font-size: 14px;
+}
+.layer-tag-char:before {
+  content: '#';
+}
+.layer-tag:hover {
+  color: var(--ion-color-medium);
+}
+
+.layer-pill {
+  font-weight: 500;
+  height: 22px;
+  border-radius: 5px;
+  border: solid 1px;
+}
+.layer-pill-active {
+  background: var(--ion-color-tertiary);
+  border-color: var(--ion-color-primary);
+}
+.layer-pill-active > ion-icon {
+  color: var(--ion-color-primary);
+}
+
+.layer-pill > ion-label,
+.layer-pill > span {
+  font-size: 12px !important;
+  margin: 0px;
+}
+.layer-pill > ion-icon {
+  font-size: 11px;
+  stroke-width: 7px;
+}
+
+.ref-badge {
+  background: var(--ion-color-primary-contrast);
+  color: var(--ion-color-primary);
+}
+
+.activity-link {
+  color: var(--ion-color-primary);
+}
+.activity-value {
+  font-style: italic;
+}
+.clickable-card:hover {
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.2);
+}
+
+.ql-bubble .ql-tooltip {
+  background-color: var(--ion-color-dark);
+  border-radius: 4px;
+  color: var(--ion-color-secondary);
+  margin-top: 10px;
+  z-index: 10;
+}
+
+.ql-mention-list-container {
+  //width: 270px;
+  border-radius: 10px;
+  border: mat-color($accent, '50-contrast') 2px solid;
+  background-color: #ffffff;
+  overflow: hidden;
+  z-index: 9001;
+}
+
+.ql-mention-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.ql-mention-list-item {
+  cursor: pointer;
+  height: 36px;
+  line-height: 36px;
+  font-size: 14px;
+  padding: 0 10px;
+  color: mat-color($primary, 800);
+  vertical-align: middle;
+  text-align: left;
+  font-weight: 600;
+  border-top: mat-color($accent, '50-contrast') solid 1px;
+}
+
+.ql-mention-list-item.selected {
+  background-color: mat-color($primary, 100);
+  //border-radius: 15px;
+  text-decoration: none;
+}
+
+[contenteditable] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.ql-container {
+  text-align: center;
+  font-size: 14px;
+  width: 100%;
+  display: inline-block;
+  border: none !important;
+  height: calc(100% - 40px - 68px);
+
+  @media screen and (min-width: 768px) {
+    width: 50rem;
+  }
+}
+
+.item-header {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 900;
+  border-bottom: #e0e0e0 solid 1px;
+  padding: 10px 10px;
+  margin: 0px;
+}
+
+.small-button {
+  line-height: 24px !important;
+  min-width: unset !important;
+  padding: 0 8px !important;
+}
+.format-button {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.layer-area .ql-container {
+  width: 100%;
+  height: 200px !important;
+}
+
+.ql-toolbar {
+  border: none !important;
+}
+
+.ql-editor ul[data-checked='true'] li {
+  text-decoration: line-through;
+}
+
+.ql-editor,
+p {
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 5px;
+  line-height: 22px;
+  color: var(--ion-color-dark);
+}
+
+.ql-editor h1 {
+  font-weight: 900;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: var(--ion-color-dark);
+}
+.ql-editor h2 {
+  font-weight: 900;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: var(--ion-color-dark);
+}
+.ql-editor h3 {
+  font-weight: 900;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: var(--ion-color-dark);
+}
+
+.title-template > quill-editor .ql-toolbar.ql-snow {
+  display: none;
+}
+
+.title-template > quill-editor .ql-editor {
+  padding-left: 0px;
+}
+
+.category-options .ql-mention-denotation-char {
+  display: none;
+}
+
+.mention a {
+  color: var(--ion-color-primary) !important;
+  text-decoration: none !important;
+}
+
+.mention {
+  height: 24px;
+  //width: 65px;
+  border-radius: 12px;
+  border: rgba(var(--ion-color-primary-rgb), 0.32) solid 1px;
+  color: var(--ion-color-primary);
+  background-color: var(--ion-color-tertiary);
+  padding: 0 3px;
+  vertical-align: middle;
+  display: inline-block;
+}
+/*   .mention>span>a:before{
+    content: "";
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    background-size: 12px 12px;
+    background-image: url(assets/icons/3d-29.svg);
+    background-repeat: no-repeat;
+    padding: 0px 2px;
+  } */
+
+.mention > span {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 3px;
+  background: var(ion-color-tertiary);
+  vertical-align: bottom;
+}
+
+/* delete-icon, path {
+    fill: var(--ion-color-primary) !important;
+}
+
+delete-icon svg{
+    height:30px !important;
+} */
+tag,
+.tag-wrapper {
+  line-height: 30px;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.small-spinner-right {
+  width: 16px;
+  margin-left: 10px;
+}
+
+.tag-button {
+  padding: 5px;
+  font-size: 1rem;
+}
+.text-avatar {
+  background: blue;
+}
+.text-avatar > p {
+  height: 40px;
+  margin: 0px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.toast-custom .toast-wrapper {
+  background: var(--ion-color-dark) !important;
+}
+
+.split-pane-md.split-pane-visible > .split-pane-side[side='end'] {
+  min-width: 375px;
+}
+
+.item-has-context {
+  margin-bottom: 0px;
+}
+
+.pallet {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+.custom-action-subtitle .action-sheet-sub-title {
+  user-select: all;
+  padding: 0px 0px 10px 17px;
+  font-size: 12px;
+  color: gray;
+}
+.custom-action-subtitle .action-sheet-title {
+  color: var(--ion-color-dark);
+}
+.layer-input {
+  padding: 20px;
+}
+
+.toast {
+  font-weight: 600;
+}
+
+.menu-item > ion-icon {
+  margin-right: 12px;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+  --background: var(--ion-color-light);
+}
+
+.chip-item {
+  margin: 5px !important;
+}
+.field-name {
+  text-transform: uppercase;
+  font-weight: 500 !important;
+  letter-spacing: 0.03rem;
+  font-size: 12.8px !important;
+  //font-size: 1rem;
+}
+.field-divider {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+}
+
+.link-title-header {
+  margin-bottom: 5px;
+}
+.light-text {
+  color: var(--ion-color-stable) !important;
+}
+
+.toast-custom .toast-message {
+  color: var(--ion-color-stable) !important;
+  font-weight: 500;
+}
+
+.active-dot {
+  background: var(--ion-color-primary);
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.user-offline {
+  opacity: 0.5;
+}
+.user-online {
+  opacity: 1;
+}
+
+.code-look {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--ion-color-primary);
+  min-height: 1.5rem;
+  font-weight: 900;
+}
+
+/* ion-item:hover {
+  background-color: var(--ion-color-light) !important;
+  cursor: pointer;
+} */
+
+.element-card:hover ion-item {
+  background-color: var(--ion-color-light) !important;
+  cursor: pointer;
+}
+.blank-item:hover {
+  background-color: var(--ion-color-light-shade) !important;
+  cursor: pointer;
+}
+
+.full-item:hover,
+.note-chip-item:hover {
+  //background-color:var(--ion-color-secondary) !important;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .image-modal {
+    --width: 100%;
+    --height: 100%;
+
+    // Temporary fix for modal header overlapping with the status bar.
+    // A longer-term fix would be to launch the `image-modal`s as a
+    // separate route rather than creating an `ion-modal` manually. This
+    // should allow for the <ion-toolbar> padding to work properly as it
+    // does in the rest of the app.
+    &.native-ipad ion-toolbar {
+      padding-top: 24px !important;
+    }
+  }
+}
+
+.no-scroll {
+  --overflow: hidden;
+}
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (min-height: 768px) and (min-width: 768px) {
+  .tall-modal {
+    --min-height: 90%;
+  }
+  .medium-modal {
+    --min-height: 80%;
+  }
+}
+
+.mat-menu-item {
+  line-height: 35px !important;
+  height: 35px !important;
+}
+.mat-menu-content:not(:empty) {
+  padding: 0px !important;
+}
+
+.tooltip-bold-dark {
+  font-weight: 600;
+  background: var(--ion-color-medium);
+  color: var(--ion-color-light) !important;
+}
+.tooltip-bold-light {
+  font-weight: 600;
+  background: var(--ion-color-light);
+  color: var(--ion-color-medium) !important;
+}
+
+.right-click-popover {
+  --width: 350px;
+}
+
+.offline-dot {
+  background: var(--ion-color-primary);
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  margin: 5px;
+}
+
+.dark-strong-button:hover {
+  color: var(--ion-color-secondary);
+  background: var(--ion-color-primary-shade);
+}
+
+.dark-strong-button {
+  font-weight: 700;
+  color: var(--ion-color-secondary);
+  background: var(--ion-color-secondary-shade);
+  //height:25px;
+}
+
+.light-strong-button {
+  font-weight: 700;
+  color: var(--ion-color-primary);
+  background: var(--ion-color-second-contrast);
+  //height:25px;
+}
+
+.light-strong-button:hover {
+  color: var(--ion-color-primary) !important;
+  background: var(--ion-color-secondary) !important;
+  //height:25px;
+}
+
+.secondary-strong-button {
+  font-weight: 700;
+  color: var(--ion-color-stable);
+  background: var(--ion-color-dark-tint);
+  //height:25px;
+}
+
+.chip-item > img {
+  width: 20px;
+  height: 100%;
+  padding: 5px 0px;
+  margin-left: 5px;
+}
+.blank-item > ion-label {
+  margin: 0 10px 0px 0px;
+  color: var(--ion-color-medium);
+}
+.blank-item {
+  font-weight: 500;
+  background: var(--ion-color-light) !important;
+  color: var(--ion-color-medium);
+  margin: 0px;
+}
+.blank-item > ion-icon {
+  background: none !important;
+  color: var(--ion-color-dark) !important;
+}
+
+.full-item > ion-icon {
+  background: none !important;
+  color: var(--ion-color-primary) !important;
+}
+.full-item > ion-label {
+  margin: 0px 0px;
+}
+.full-item > .chip-button {
+  color: var(--ion-color-primary) !important;
+}
+.full-item {
+  font-weight: 900;
+  color: var(--ion-color-primary);
+  background: var(--ion-color-secondary);
+}
+.regular-item > ion-label {
+  margin: 0 10px 0px 0px;
+  font-size: 11px;
+}
+
+.menu-chip-item {
+  font-weight: 900;
+  color: var(--ion-color-primary);
+  background: var(--ion-color-secondary);
+  height: 25px;
+}
+.menu-chip-item > ion-label {
+  margin: 0 10px 0px 0px;
+  font-size: 11px;
+  color: var(--ion-color-primary);
+}
+.menu-chip-item > ion-icon {
+  height: 100%;
+  line-height: 25px;
+}
+
+ion-toolbar {
+  --ion-color-light: white;
+}
+
+ion-tabs {
+  --ion-color-light: white;
+}
+
+.sc-ion-card-md-h {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: block;
+  position: relative;
+  background: var(--background);
+  color: var(--color);
+  font-family: var(--ion-font-family, inherit);
+  overflow: hidden;
+  --background: var(--ion-item-background-color, transparent);
+  --color: var(--ion-text-color-step-400, #666666);
+  //margin: 30px 20px;
+  border-radius: 8px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  font-size: 14px;
+  -webkit-box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.ios
+ion-nav
+> .ion-page
+> ion-content.statusbar-padding:first-child
+.scroll-content {
+  padding-top: 0px !important;
+}
+
+.mat-expansion-panel-content > .mat-expansion-panel-body {
+  padding: 0;
+}
+
+.fade {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
+  background: -moz-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+      left,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 1) 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+  position: fixed;
+  height: 100%;
+  right: 0px;
+  width: 30px;
+}
+
+.pad {
+  height: 100%;
+  right: 0px;
+  width: 30px;
+  display: inline-block;
+}
+
+p {
+  font-weight: 300;
+}
+
+.avatar-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// We display the "md" styled action sheet on iOS for opinionated reasons. This fixes the
+// spacing on bottom to ensure the options don't interfere with native on-screen
+// UI elements like the home bar.
+.action-sheet-group.sc-ion-action-sheet-md:last-child {
+  padding-bottom: var(--ion-safe-area-bottom, 0);
+}
+
+.error-message {
+  background: var(--redish);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+
+  ion-icon {
+    margin-right: 1rem;
+  }
+}
+
+.text-success {
+  color: var(--ion-color-success) !important;
+}
+
+.text-redish {
+  color: var(--redish) !important;
+}
+
+.input-hidden {
+  position: absolute;
+  left: -99999rem;
+}
+
+.toolbar--small {
+  --min-height: 32px;
+
+  ion-item {
+    --min-height: 24px;
+  }
+}
+
+.toolbar--large {
+  --min-height: 80px;
+
+  ion-item {
+    --min-height: 72px;
+  }
+}
+
+.icon-primary > svg,
+.icon-primary {
+  * {
+    stroke: mat-color($primary);
+  }
+}
+
+.help-icon {
+  color: mat-color($primary, 400);
+  vertical-align: sub;
+  margin-left: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.icon-accent > svg,
+.icon-accent {
+  * {
+    stroke: mat-color($accent);
+  }
+}
+
+.icon-accent-purple > svg,
+.icon-accent-purple {
+  * {
+    stroke: mat-color($accent_purple);
+  }
+}
+
+.icon-warn > svg,
+.icon-warn {
+  * {
+    stroke: mat-color($warn);
+  }
+}
+
+.icon-primary-fill > svg,
+.icon-primary-fill {
+  * {
+    fill: mat-color($primary);
+  }
+}
+
+.icon-accent-fill > svg,
+.icon-accent-fill {
+  * {
+    fill: mat-color($accent);
+  }
+}
+
+.icon-accent-purple-fill > svg,
+.icon-accent-purple-fill {
+  * {
+    fill: mat-color($accent_purple);
+  }
+}
+
+.icon-warn-fill > svg,
+.icon-warn-fill {
+  * {
+    fill: mat-color($warn);
+  }
+}
+
+.mat-fab.mat-accent-purple,
+.mat-flat-button.mat-accent-purple,
+.mat-mini-fab.mat-accent-purple,
+.mat-flat-button.mat-accent-purple {
+  background: mat-color($accent_purple);
+  color: mat-color($accent_purple, 'default-contrast');
+}
+
+.form-field-small .mat-select-arrow-wrapper {
+  transform: translateY(0px) !important;
+}
+
+.form-field-small {
+  font-size: 0.9rem;
+
+  &.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+    transform: translateY(-1.15em) scale(0.75);
+    width: 133.33333%;
+  }
+  .mat-form-field-wrapper {
+    padding: 0;
+    margin: 0;
+  }
+  .mat-form-field-label-wrapper {
+    top: -12px;
+
+    label.mat-form-field-label {
+      top: 1.35em;
+    }
+  }
+  .mat-form-field-flex > .mat-form-field-infix {
+    padding: 0.6em 0px !important;
+
+    select {
+      top: -15px;
+      padding-top: 10px;
+    }
+  }
+
+  &.mat-form-field:not(.mat-form-field-has-label) {
+    .mat-form-field-flex > .mat-form-field-infix {
+      &:after {
+        margin-top: -2px !important;
+      }
+    }
+  }
+}
+
+mat-bottom-sheet-container.mat-bottom-sheet-container {
+  padding: 0 0 calc(0.5rem + env(safe-area-inset-bottom)) 0;
+}
+
+/* Hides the scrollbar on modal open. Not positive this is safe to use. */
+.cdk-global-scrollblock {
+  overflow-y: hidden;
+}
+
+.layer-dialog-page {
+  /* Full screen dialog on mobile devices */
+  max-width: 100vw !important;
+  width: 100vw;
+  height: 100vh;
+
+  /* 600x600 dialog on any screen >= 600px */
+  @media screen and (min-width: 600px) {
+    max-width: 80vw !important;
+    width: 600px;
+    height: 600px;
+  }
+
+  .dialog-header {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+$dialog-header-height: calc(56px + env(safe-area-inset-top));
+.tabbed-dialog {
+  @media screen and (min-width: 600px) {
+    width: 600px;
+    height: 500px;
+  }
+
+  .mat-dialog-container {
+    padding: 0;
+
+    .dialog-header {
+      padding: calc(0.5rem + env(safe-area-inset-top)) 0.25rem 0.5rem 1rem;
+      background: mat-color($primary);
+      color: mat-color($primary, 'default-contrast');
+      height: $dialog-header-height;
+
+      h3 {
+        margin: 0;
+      }
+    }
+
+    .dialog-body {
+      height: calc(100% - #{$dialog-header-height});
+      overflow: hidden;
+
+      .tabs {
+        height: 50px;
+      }
+
+      .tab-body-container {
+        height: calc(100% - 50px);
+        overflow-y: auto;
+
+        .tab-body {
+          padding: 1rem;
+        }
+      }
+    }
+
+    .mat-tab-body-wrapper {
+      /* Allows for dialog scrolling to occur in tab body instead of entire dialog */
+      overflow: auto;
+      height: calc(100% - 48.8px);
+    }
+
+    .mat-tab-body-content {
+      padding: 0 2rem;
+    }
+  }
+}
+
+a[mat-button],
+.secondary-action-button {
+  text-decoration: underline !important;
+}
+
+.mat-form-field:not(.mat-form-field-has-label) .mat-form-field-infix {
+  border-top-width: 4px;
+}
+
+.layer-snackbar-default {
+  background: mat-color($accent_purple);
+  color: mat-color($accent_purple, 'default-contrast');
+}
+.layer-snackbar-warn {
+  background: mat-color($warn);
+  color: mat-color($warn, 'default-contrast');
+}
+
+/*
+  Overrides for mat-toolbar and mat-snackbar styles for iPhone X full screen.
+  The CSS env variables safe-area-inset-top and safe-area-inset-bottom give us a pixel
+  value based on the device being used so that we can account for the notch (top)
+  and home bar (bottom).
+
+  https://webkit.org/blog/7929/designing-websites-for-iphone-x/
+*/
+.mat-toolbar {
+  padding-top: env(safe-area-inset-top) !important;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: calc(64px + env(safe-area-inset-top)) !important;
+
+  @media screen and (max-width: 599px) {
+    height: calc(56px + env(safe-area-inset-top)) !important;
+  }
+}
+
+.mat-snack-bar-handset {
+  margin-bottom: env(safe-area-inset-bottom) !important;
+}
+
+.mat-dialog-title,
+.mat-tab-link {
+  font-weight: 700;
+}
+
+.mat-dialog-actions.mat-dialog-actions {
+  @media screen and (max-width: 599px) {
+    padding: 12px 0;
+    margin-bottom: -12px;
+  }
+
+  padding: 24px 0;
+}
+
+/* .mat-chip.mat-standard-chip {
+  border-radius: 2px;
+  font-weight: 700;
+  padding: 6px;
+  height: 18px;
+  font-size: 0.785rem;
+  min-height: 0;
+
+  &.chip-large {
+    height: 26px;
+    font-size: 1rem;
+  }
+
+  &.mat-primary {
+    background: mat-color($primary, 50);
+    color: mat-color($primary, 900);
+  }
+  &.mat-accent {
+    background: mat-color($accent, 100);
+    color: mat-color($accent, 900);
+  }
+  &.mat-accent-purple {
+    background: mat-color($accent_purple, 50);
+    color: mat-color($accent_purple, 900);
+  }
+  &.mat-warn {
+    background: mat-color($warn, 50);
+    color: mat-color($warn, 900);
+  }
+} */
+
+.text-primary {
+  color: mat-color($primary);
+}
+
+.text-accent {
+  color: mat-color($accent);
+}
+
+.text-accent-purple {
+  color: mat-color($accent_purple);
+}
+
+.text-warn {
+  color: mat-color($warn);
+}

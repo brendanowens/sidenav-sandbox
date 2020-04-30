@@ -1,0 +1,94 @@
+@import '~@angular/material/theming';
+@import '../../variables';
+
+mat-sidenav-container{
+  height: 100%;
+}
+
+mat-sidenav, mat-sidenav-content{
+  padding: 16px;
+}
+
+mat-sidenav{
+  background-color: mat-color($primary, 900);
+  width: 275px;
+  color: mat-color($primary, 100);
+}
+
+.sidenav-header{
+  mat-icon{
+    width: 20px;
+  }
+  button {
+    float: right;
+    width: 20px;
+    height: 20px;
+
+    mat-icon {
+      width: 12px;
+      height: 12px;
+      margin-top: -32px;
+    }
+  }
+}
+
+.sidenav-header{
+  padding-top: 1rem;
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.sidenav-header-button ion-button{
+  float: right;
+  background-color: mat-color($accent);
+}
+
+.sidenav-header-button ion-button mat-icon {
+  width: 12px;
+}
+
+.sidenav-sub-header {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.sidenav-header-content{
+  color: mat-color($primary, 600);
+  font-size: .9rem;
+}
+
+.icon-white {
+  color: white;
+}
+
+.mat-expansion-panel {
+  background-color: transparent;
+
+  .mat-expansion-panel-body{
+  }
+
+  .mat-expansion-panel-header {
+    padding: 0 5px;
+
+    button {
+      width: 12px;
+      height: 12px;
+      float: right;
+    }
+  }
+}
+
+.sidenav-header-content {
+  padding-left: 30px;
+}
+
+.no-shadow {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+.mat-expansion-indicator{
+  color: white !important;
+}
